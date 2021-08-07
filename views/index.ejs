@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Creating a POST request.</h1>
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="name" />
+      <input type="text" placeholder="quote" name="quote" />
+      <button type="submit">Submit</button>
+    </form>
+    <h2>Quotes</h2>
+    <ul class="quotes">
+      <!-- Loop through quotes -->
+      <% for(var i = 0; i < quotes.length; i++) {%>
+      <li class="quote">
+        <!-- Output name from the iterated quote object -->
+        <span><%= quotes[i].name %></span>:
+        <!-- Output quote from the iterated quote object -->
+        <span><%= quotes[i].quote %></span>
+      </li>
+      <% } %>
+    </ul>
+
+    <div>
+      <h2>Dennis Ngari Invades!</h2>
+      <p>Replace first charity's Quote with a quote Written by Dennis.</p>
+      <button id="update-button">Replace Yoda's quote</button>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>
